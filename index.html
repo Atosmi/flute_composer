@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<head>
+    <title>a windy place</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta name='description' content='flute music generator with AI'>
+    <meta charset="UTF-8">
+    <script src='https://cdn.jsdelivr.net/npm/tone@14.7.39/build/Tone.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <link rel='stylesheet' type='text/css' href='style.css' />
+</head>
+
+<body>
+    <div id='background'></div>
+    <div id='main-screen'>    
+         <div id='menu-wrapper'>
+
+                
+
+            <div class='form-heading enabled'>Drums</div>
+            <form id='drums'>
+                <label>
+                    <input class='form-input' type='radio' value='waterdrop' name='drums' onchange="setDrums('waterdrop')" checked />
+                    waterdrop
+                </label>
+                <label>
+                    <input class='form-input' type='radio' value='groovy' name='drums' onchange="setDrums('groovy')" />
+                    groovy
+                </label>
+                <label>
+                    <input class='form-input' type='radio' value='bonfire' name='drums' onchange="setDrums('bonfire')" />
+                    bonfire
+                </label>
+            </form>
+            <div class='form-heading enabled'>Ambience</div>
+            <form id='natureSounds'>
+                <label>
+                    <input class='form-input' type='radio' value='wind' name='natureSounds' onchange="setNatureSounds('wind')" checked />
+                    wind
+                </label>
+                <label>
+                    <input class='form-input' type='radio' value='fireplace' name='natureSounds' onchange="setNatureSounds('fireplace')" />
+                    fireplace
+                </label>
+                <label>
+                    <input class='form-input' type='radio' value='rain' name='natureSounds' onchange="setNatureSounds('rain')" />
+                    rain
+                </label>
+            </form>
+            
+            <!-- #region -->
+            <div class='form-heading enabled invisible'>AI Soloist</div>
+            <form class="invisible" id='soloist'>
+                <label>
+                    <input class='form-input' type='radio' value='ai-true' name='ai' onchange="setAI('true')" />
+                    on
+                </label>
+                <label>
+                    <input class='form-input' type='radio' value='ai-false' name='ai' onchange="setAI('false')" checked />
+                    off
+                </label>
+            </form>
+            <!-- #endregion-->
+            <div id='buttons-wrapper'>
+                <button id='choose' class='button' onclick='enableChord()'>Choose A Song</button>
+                <button id='use-ai' class='button' onclick='enableAI()'>Use AI</button>
+            </div>
+                 
+                
+                
+            <div id='buttons-wrapper'>
+                <button id='start' class='button'>&#x25B7; play</button>
+                <button id='stop' class='button'>&#x25A2; stop</button>
+            </div>
+        </div>
+
+           
+        <div id='canvas'></div>
+    </div>
+</body>
+<script src='./script.js'></script>
+</html>
