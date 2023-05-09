@@ -1,4 +1,4 @@
-## Flute Generation Model
+# Digital Bansuri
 
 This repository contains a 3-layer LSTM model that can be trained on MIDI files to generate an output MIDI file. 
 
